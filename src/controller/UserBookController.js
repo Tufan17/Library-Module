@@ -164,7 +164,7 @@ const points = async (req, res, next) => {
       res.status(400).json(response);
       return ;
     }else{
-      const result=await userBookService.point(110,parseInt(book_id),parseInt(point));
+      const result=await userBookService.point(user.id,parseInt(book_id),parseInt(point));
       if(result.status === 'error'){
         const response = formatApiResponse(
           req,
